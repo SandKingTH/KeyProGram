@@ -99,39 +99,3 @@ getgenv().Key = "MARU-ZPSH-UBRVL-G88C-II6WK-7Z1E"
 getgenv().id = "969581952531316827"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
-
-repeat wait() until game:IsLoaded() and game.Players.LocalPlayer 
-wait(5)
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local function addFriend()
-    local totalRequestsSent = 0
-    local playersToConsider = {}
-    for _, player in ipairs(Players:GetPlayers()) do
-        if player ~= LocalPlayer and not LocalPlayer:IsFriendsWith(player.UserId) then
-            table.insert(playersToConsider, player)
-        end
-    end
-    for _, player in ipairs(playersToConsider) do
-        local success, errorMessage = pcall(function()
-            if not LocalPlayer:IsFriendsWith(player.UserId) then
-                if LocalPlayer.RequestFriendship then
-                    LocalPlayer:RequestFriendship(player)
-                    totalRequestsSent = totalRequestsSent + 1
-                    print("✅ Sent friend request to:", player.Name)
-                else
-                    error("RequestFriendship not allowed")
-                end
-            else
-                print("⚠️ Already friends with:", player.Name)
-            end
-        end)
-        if not success then
-            print("❌ Error adding", player.Name, ":", errorMessage)
-        end
-        task.wait(5)
-    end
-    print("📌 Total friend requests sent:", totalRequestsSent)
-end
-addFriend()
-
