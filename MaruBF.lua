@@ -99,19 +99,3 @@ getgenv().Key = "MARU-ZPSH-UBRVL-G88C-II6WK-7Z1E"
 getgenv().id = "969581952531316827"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
-
-
-repeat task.wait() until game:IsLoaded()
-getgenv().Hermanos_Settings = {
-	['key'] = 'bafd2512-771b-4091-b5fe-069e746eaf1f',
-	['PC'] = 'SandBox',
-	['webhooks'] = {
-		['fullmoon'] = 'https://discord.com/api/webhooks/',
-		['mirage'] = 'https://discord.com/api/webhooks/',
-	},
-	['Sword'] = {'Cursed Dual Katana', 'Shark Anchor', 'Tushita', 'Yama', 'Dark Dagger', 'Hallow Scythe', 'Saber'},
-	['Gun'] = {'Soul Guitar', 'Serpent Bow', 'Kabucha', 'Acidum Rifle'},
-	['Accessories'] = {'Dark Coat', 'Leviathan Shield','Leviathan Crown', 'Pale Scarf', 'Kitsune Mask', 'Kitsune Ribbon'},
-	['Fruit'] = {'Kitsune', 'Leopard', 'Dragon (West)', 'Spirit', 'Control', 'Venom', 'Gas', 'Yeti', 'Shadow', 'Dough','Mammoth', 'T-Rex', 'Dragon (East)'},
-}
-task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/script.lua'))() end)
