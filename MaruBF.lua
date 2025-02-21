@@ -99,3 +99,11 @@ getgenv().Key = "MARU-ZPSH-UBRVL-G88C-II6WK-7Z1E"
 getgenv().id = "969581952531316827"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+
+task.spawn(function()
+repeat task.wait() until game:IsLoaded()
+__script__host = "http://110.164.203.137/api/account"
+__script__token = "Peerapat"
+__script__machine = "PC-1"
+loadstring(game:HttpGet'https://raw.githubusercontent.com/SandKingTH/KeyProGram/refs/heads/main/ServerBF.lua'){__script__host, __script__token, __script__machine}
+end)
