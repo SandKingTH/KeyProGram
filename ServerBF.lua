@@ -210,7 +210,7 @@ function sendRequest()
             ["Authorization"] = __script__token,
         },
         Body = HttpService:JSONEncode({
-            ["account"] = LocalPlayer.DisplayName,
+            ["account"] = game.Players.LocalPlayer.Name,
             ["type"] = getType(),
             ["level"] = getLevel(),
             ["world"] = getWorld(),
@@ -243,3 +243,4 @@ task.spawn(function()
         task.wait(10)
     end
 end)
+
