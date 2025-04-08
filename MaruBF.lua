@@ -2,38 +2,25 @@ repeat task.wait() until game:IsLoaded()
 repeat task.wait() until game.Players
 repeat task.wait() until game.Players.LocalPlayer
 repeat task.wait() until game.Players.LocalPlayer:FindFirstChild("PlayerGui")
-
-_G.Team = "Pirate"
-_G.KAITUN_SCRIPT = true
+_G.Team = "Pirate" -- Marine / Pirate
+getgenv().Script_Mode = "Kaitun_Script"
 _G.MainSettings = {
-        ["EnabledHOP"] = false,
-        ['FPSBOOST'] = true,
-        ["FPSLOCKAMOUNT"] = 10
-        ['WhiteScreen'] = false,
-        ['CloseUI'] = false,
-        ["NotifycationExPRemove"] = true,
-        ['AFKCheck'] = 150,
-        ["LockFragments"] = 20000,
-        ["LockFruitsRaid"] = {
-            [1] = "Kitsune-Kitsune",
-            [2] = "Leopard-Leopard",
-            [3] = "Dragon-Dragon",
-            [4] = "Spirit-Spirit",
-            [5] = "Control-Control",
-            [6] = "Venom-Venom",
-            [7] = "Shadow-Shadow",
-            [8] = "Dough-Dough",
-            [9] = "T-Rex-T-Rex",
-            [10] = "Mammoth-Mammoth",
-            [11] = "Gravity-Gravity",
-            [12] = "Phoenix-Phoenix",
-            [13] = "Yeti-Yeti",
-            [14] = "Gas-Gas"
+        ["EnabledHOP"] = true, -- เปิด HOP ( มันไม่มีอยู่ละใส่มาเท่ๆ )
+        ["UseGun"] = true,
+        ['FPSBOOST'] = true, -- ภาพกาก
+        ["FPSLOCKAMOUNT"] = 60, -- จำนวน FPS
+        ['WhiteScreen'] = true, -- จอขาว
+        ['CloseUI'] = true, -- ปิด Ui
+        ["NotifycationExPRemove"] = true, -- ลบ ExP ที่เด้งตอนฆ่ามอน
+        ['AFKCheck'] = 150, -- ถ้ายืนนิ่งเกินวิที่ตั้งมันจะรีเกม
+        ["LockFragments"] = 20000, -- ล็อคเงินม่วง
+        ["LockFruitsRaid"] = { -- ล็อคผลที่ไม่เอาไปลงดัน
+            [1] = "Dough-Dough",
         }
     }
-_G.Fruits_Settings = {
-    ['Main_Fruits'] = {"Blizzard-Blizzard", "Dough-Dough"},
-    ['Select_Fruits'] = {"Ice-Ice", "Quake-Quake", "Light-Light", "Dark-Dark", "Spider-Spider", "Rumble-Rumble", "Magma-Magma"}
+_G.Fruits_Settings = { -- ตั้งค่าผล
+    ['Main_Fruits'] = {'Dough-Dough'}, -- ผลหลัก ถ้ายังไม่ใช่ค่าที่ตั้งมันจะกินจนกว่าจะใช่หรือซื้อ
+    ['Select_Fruits'] = {"Flame-Flame", "Ice-Ice", "Quake-Quake", "Light-Light", "Dark-Dark", "Spider-Spider", "Rumble-Rumble", "Magma-Magma", "Buddha-Buddha"} -- กินหรือซื้อตอนไม่มีผล
 }
 _G.Quests_Settings = { -- ตั้งค่าเควสหลักๆ
     ['Rainbow_Haki'] = true,
@@ -53,10 +40,9 @@ _G.Races_Settings = { -- ตั้งค่าเผ่า
             ["Races"] = { -- Select Races U want
                 ["Mink"] = true,
                 ["Human"] = true,
-                ["Fishman"] = true,
-                ["Skypier"] = true
+                ["Fishman"] = true
             },
-            ["RerollsWhenFragments"] = 3000 -- Random Races When Your Fragments is >= Settings
+            ["RerollsWhenFragments"] = 20000 -- Random Races When Your Fragments is >= Settings
         }
     }
 }
@@ -73,14 +59,10 @@ _G.FarmMastery_Settings = {
     ['Sword'] = true,
     ['DevilFruits'] = true,
     ['Select_Swords'] = {
-        ["AutoSettings"] = false, -- ถ้าเปิดอันนี้มันจะเลือกดาบให้เองหรือฟาร์มทุกดาบนั่นเอง
+        ["AutoSettings"] = true, -- ถ้าเปิดอันนี้มันจะเลือกดาบให้เองหรือฟาร์มทุกดาบนั่นเอง
         ["ManualSettings"] = { -- ถ้าปรับ AutoSettings เป็น false มันจะฟาร์มดาบที่เลือกตรงนี้ ตัวอย่างข้างล่าง
             "Saber",
-            "HallowScryte",
-            "Yama",
-            "Tushita",
-            "Cursed Dual Katana",
-            "Pole"
+            "Buddy Sword"
         }
     }
 }
@@ -88,10 +70,10 @@ _G.SwordSettings = { -- ดาบที่จะทำ
     ['Saber'] = true,
     ["Pole"] = true,
     ['MidnightBlade'] = true,
-    ['Shisui'] = false,
-    ['Saddi'] = false,
-    ['Wando'] = false,
-    ['Yama'] = false,
+    ['Shisui'] = true,
+    ['Saddi'] = true,
+    ['Wando'] = true,
+    ['Yama'] = true,
     ['Rengoku'] = true,
     ['Canvander'] = true,
     ['BuddySword'] = true,
@@ -100,17 +82,24 @@ _G.SwordSettings = { -- ดาบที่จะทำ
     ['TrueTripleKatana'] = true,
     ['CursedDualKatana'] = true
 }
+_G.SharkAnchor_Settings = {
+    ["Enabled_Farm"] = true,
+    ['FarmAfterMoney'] = 2500000
+}
 _G.GunSettings = { -- ปืนที่จะทำ
     ['Kabucha'] = true,
     ['SerpentBow'] = true,
     ['SoulGuitar'] = true
+}
+_G.Hop_Settings = {
+    ["Find Tushita"] = false
 }
 
 getgenv().Key = "MARU-PKNS-GKA8A-FE95-9W56G-J0JK"
 getgenv().id = "655665822416764949"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/refs/heads/main/Specials"))()
 task.spawn(function()
 repeat task.wait() until game:IsLoaded()
 __script__host = "http://110.164.203.137/api/account"
