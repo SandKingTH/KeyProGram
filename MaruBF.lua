@@ -2,6 +2,7 @@ repeat task.wait() until game:IsLoaded()
 repeat task.wait() until game.Players
 repeat task.wait() until game.Players.LocalPlayer
 repeat task.wait() until game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+
 _G.Team = "Pirate"
 _G.KAITUN_SCRIPT = true
 _G.MainSettings = {
@@ -109,8 +110,6 @@ getgenv().Key = "MARU-PKNS-GKA8A-FE95-9W56G-J0JK"
 getgenv().id = "655665822416764949"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/refs/heads/main/Specials"))()
 
 task.spawn(function()
 repeat task.wait() until game:IsLoaded()
