@@ -100,12 +100,4 @@ getgenv().id = "655665822416764949"
 getgenv().Script_Mode = "Kaitun_Script"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
 
-task.spawn(function()
-repeat task.wait() until game:IsLoaded()
-__script__host = "http://110.164.203.137/api/account"
-__script__token = "Peerapat"
-__script__machine = "PC-1"
-loadstring(game:HttpGet'https://raw.githubusercontent.com/SandKingTH/KeyProGram/refs/heads/main/ServerBF.lua'){__script__host, __script__token, __script__machine}
-end)
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/refs/heads/main/Specials"))()
