@@ -23,11 +23,9 @@ if chooseTeamGui then
 end
 
 local GodHuman = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true))
-if GodHuman then
-    if GodHuman == 1 then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Maru_mumu.lua"))()
-    end
-    task.wait(1)
+if GodHuman == 1 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Maru_mumu.lua"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Banana_mumu.lua"))()
 end
+task.wait(1)
