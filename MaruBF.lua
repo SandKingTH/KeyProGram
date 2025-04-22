@@ -27,5 +27,16 @@ if GodHuman == 1 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Maru_mumu.lua"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Banana_mumu.lua"))()
+    task.spawn(function()
+        while true do
+            task.wait(2)
+            local inv = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
+            for _, item in pairs(inv) do
+                if item.Type == "FightingStyle" and item.Name == "Godhuman" then
+                    game:Shutdown()
+                    return
+                end
+            end
+        end
+    end)
 end
-task.wait(1)
