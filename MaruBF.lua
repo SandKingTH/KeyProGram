@@ -29,7 +29,7 @@ else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Banana_mumu.lua"))()
     task.spawn(function()
         while true do
-            task.wait(2)
+            task.wait(600)
             local inv = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
             for _, item in pairs(inv) do
                 if item.Type == "FightingStyle" and item.Name == "Godhuman" then
