@@ -25,8 +25,10 @@ end
 local GodHuman = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true))
 if GodHuman == 1 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Maru_mumu.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Mirage.lua"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Banana_mumu.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SandKingTH/RawScriptAll/refs/heads/main/Mirage.lua"))()
     task.spawn(function()
         while true do
             task.wait(300)
